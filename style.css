@@ -1,0 +1,1448 @@
+
+/* =========================================================
+   1. VARIABLES & GLOBAL STYLES
+   ========================================================= */
+
+:root {
+    color-scheme: light;
+    --bg: #f5f5f5;
+    --surface: #ffffff;
+    --ink: #171717;
+    --muted: #626262;
+    --line: rgba(0, 0, 0, 0.16);
+    --acid: #171717;
+    --coral: #777777;
+    --page-width: 76rem;
+    --resume-height: 54vh;
+
+    font-family: "Space Grotesk", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #1e1e1e;
+    --surface: #252526;
+    --ink: #d4d4d4;
+    --muted: #9d9d9d;
+    --line: rgba(255, 255, 255, 0.14);
+    --acid: #d4d4d4;
+    --coral: #858585;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: var(--bg);
+    background-image: radial-gradient(
+        rgba(0, 0, 0, 0.055) 0.7px,
+        transparent 0.7px
+    );
+    background-position: 13px 18px;
+    background-size: 108px 108px;
+    color: var(--ink);
+    font: 400 1rem/1.65 "Space Grotesk", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.025),
+        var(--bg) 90%
+    );
+    content: "";
+    pointer-events: none;
+}
+
+:root[data-theme="dark"] body {
+    background-image: radial-gradient(
+        rgba(255, 255, 255, 0.07) 0.7px,
+        transparent 0.7px
+    );
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--acid);
+    outline-offset: 4px;
+}
+
+button {
+    font: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+figure {
+    margin: 0;
+}
+
+
+/* =========================================================
+   2. HEADER & NAVIGATION
+   ========================================================= */
+
+.skip-link {
+    position: fixed;
+    z-index: 10;
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.7rem 1rem;
+    transform: translateY(-150%);
+    background: var(--acid);
+    color: var(--bg);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+.site-header,
+main,
+.site-footer {
+    width: min(var(--page-width), calc(100% - 6rem));
+    margin-inline: auto;
+}
+
+.site-header {
+    display: flex;
+    min-height: 5.5rem;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+}
+
+.wordmark {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.wordmark span {
+    color: var(--acid);
+}
+
+.site-header nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.site-header nav a,
+.header-note,
+.eyebrow,
+.hero-index,
+.site-footer,
+.archive-note {
+    font-family: "DM Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0;
+}
+
+.site-header nav a {
+    position: relative;
+    color: var(--muted);
+    transition: color 180ms ease;
+}
+
+.site-header nav a::after {
+    position: absolute;
+    right: 0;
+    bottom: -0.35rem;
+    left: 0;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: var(--acid);
+    content: "";
+    transition: transform 180ms ease;
+}
+
+.site-header nav a:hover {
+    color: var(--ink);
+}
+
+.site-header nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.header-note {
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   3. DARK MODE TOGGLE
+   ========================================================= */
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.35rem 0;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    color: var(--ink);
+}
+
+.theme-track {
+    position: relative;
+    display: flex;
+    width: 3.1rem;
+    height: 1.8rem;
+    align-items: center;
+    padding: 0.18rem;
+    border: 2px solid var(--muted);
+    border-radius: 1rem;
+    background: #e7e7e7;
+}
+
+.theme-toggle:hover .theme-track {
+    border-color: var(--ink);
+}
+
+.theme-thumb {
+    position: relative;
+    display: block;
+    width: 1.15rem;
+    height: 1.15rem;
+    flex: 0 0 1.15rem;
+    transform: translateX(0);
+    transition: transform 540ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.theme-thumb svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.7;
+}
+
+.theme-sun,
+.theme-moon {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+}
+
+.theme-sun {
+    color: #e0a947;
+    background: #e0a947;
+    opacity: 1;
+    transform: scale(0.92);
+}
+
+.theme-moon {
+    color: #a6aab2;
+    background: #a6aab2;
+    opacity: 0;
+    transform: scale(0.72);
+}
+
+:root[data-theme="dark"] .theme-track {
+    background: #303033;
+}
+
+:root[data-theme="dark"] .theme-thumb {
+    transform: translateX(1.35rem);
+}
+
+:root[data-theme="dark"] .theme-sun {
+    opacity: 0;
+    transform: scale(0.62);
+}
+
+:root[data-theme="dark"] .theme-moon {
+    opacity: 1;
+    transform: scale(0.92);
+}
+
+
+/* =========================================================
+   4. HERO SECTION
+   ========================================================= */
+
+.hero {
+    position: relative;
+    display: grid;
+    min-height: 39rem;
+    grid-template-columns: 0.92fr 1.08fr;
+    align-items: center;
+    gap: 4rem;
+    padding: 4rem 0 5.5rem;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 0 0 1.5rem;
+    color: var(--muted);
+    text-transform: uppercase;
+}
+
+.eyebrow span {
+    color: var(--coral);
+}
+
+h1 {
+    margin: 0;
+    font-size: 6rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 0.92;
+}
+
+h1 span {
+    color: var(--acid);
+}
+
+.hero-lede {
+    margin: 1.8rem 0 1rem;
+    font-size: 1.35rem;
+    line-height: 1.35;
+}
+
+.hero-lede em {
+    color: var(--muted);
+    font-style: normal;
+}
+
+.about {
+    max-width: 29rem;
+    margin: 0;
+    color: var(--muted);
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.8rem;
+}
+
+.links > a,
+.email-button {
+    color: var(--ink);
+    font-size: 0.95rem;
+    transition: color 160ms ease, transform 160ms ease;
+}
+
+.links > a:hover,
+.email-button:hover {
+    color: var(--acid);
+    transform: translateY(-2px);
+}
+
+.email-action {
+    position: relative;
+}
+
+.email-button {
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.email-button span,
+.links > a span {
+    color: var(--acid);
+}
+
+.copy-feedback {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    color: var(--acid);
+    font-size: 0.75rem;
+    font-weight: 700;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 0.35rem);
+    white-space: nowrap;
+}
+
+.copy-feedback.is-visible {
+    animation: copied-pop 1.6s ease both;
+}
+
+@keyframes copied-pop {
+    15%,
+    75% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -0.35rem);
+    }
+}
+
+.hero-index {
+    position: absolute;
+    bottom: 1.4rem;
+    left: 0;
+    display: flex;
+    gap: 1rem;
+    color: var(--muted);
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   5. FAVORITE STUFF / MINESWEEPER / MUSIC PLAYER
+   ========================================================= */
+
+.favorite-section {
+    width: 100%;
+    min-width: 0;
+}
+
+.favorite-section-heading {
+    margin-bottom: 1rem;
+}
+
+.favorite-section-heading h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+}
+
+.favorite-section-heading h2 span {
+    color: var(--coral);
+}
+
+.favorite-section-heading p {
+    margin: 0.3rem 0 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.game-wrapper {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 18px;
+}
+
+.game-stage {
+    flex: 1;
+    min-width: 0;
+}
+
+.game-stage-inner {
+    position: relative;
+    display: grid;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 750ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.game-wrapper.is-music .game-stage-inner {
+    transform: rotateY(180deg);
+}
+
+.game-screen {
+    grid-area: 1 / 1;
+    min-width: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.game-screen-front {
+    position: relative;
+}
+
+.game-screen-back {
+    transform: rotateY(180deg);
+}
+
+.hero-game {
+    --cell-size: clamp(25px, 3vw, 34px);
+
+    padding: 1.1rem;
+    border: 2px solid;
+    border-color: #fff #707070 #707070 #fff;
+    background: #c0c0c0;
+    color: #111;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+}
+
+/* MINESWEEPER TITLE */
+
+.minesweeper-heading {
+    margin-bottom: 0.85rem;
+    text-align: center;
+}
+
+.minesweeper-heading h3 {
+    margin: 0;
+    color: #222;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+}
+
+.minesweeper-heading h3 span {
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.game-status-bar {
+    display: flex;
+    min-height: 3.4rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.7rem;
+    padding: 0.45rem 0.55rem;
+    border: 2px inset #eee;
+    background: #bdbdbd;
+}
+
+.game-counter {
+    display: grid;
+    justify-items: center;
+    gap: 0.08rem;
+}
+
+.game-counter > span,
+.game-hint {
+    color: #444;
+    font-family: "DM Mono", monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+}
+
+.game-counter output {
+    min-width: 3.2rem;
+    padding: 0.05rem 0.25rem;
+    background: #181818;
+    color: #ddd;
+    font: 500 1.25rem/1.35 "DM Mono", monospace;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+
+.game-reset {
+    display: grid;
+    width: 2.1rem;
+    height: 2.1rem;
+    place-items: center;
+    padding: 0;
+    border: 2px outset #f7f7f7;
+    background: #d4d4d4;
+    color: #111;
+    font-size: 1.45rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 150ms ease, background-color 150ms ease;
+}
+
+.game-reset:hover {
+    transform: translateY(-1px);
+    background: #e8e8e8;
+}
+
+.game-reset:active {
+    border-style: inset;
+    transform: none;
+}
+
+.game-modes {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    margin: 0.7rem 0;
+}
+
+.game-modes button {
+    min-width: 5.5rem;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid #888;
+    background: #d5d5d5;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 150ms ease, color 150ms ease, transform 150ms ease;
+}
+
+.game-modes button:hover {
+    transform: translateY(-1px);
+}
+
+.game-modes button[aria-pressed="true"] {
+    border-color: #666;
+    background: #777;
+    color: #fff;
+}
+
+.mine-board {
+    display: grid;
+    width: max-content;
+    max-width: 100%;
+    gap: 2px;
+    margin: 0 auto;
+    padding: 0.4rem;
+    border: 2px inset #eee;
+    background: #808080;
+}
+
+.mine-row {
+    display: flex;
+    gap: 0;
+}
+
+.mine-cell {
+    display: grid;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    flex: 0 0 var(--cell-size);
+    place-items: center;
+    padding: 0;
+    border: 2px solid;
+    border-color: #fff #808080 #808080 #fff;
+    background: #c0c0c0;
+    color: #111;
+    font: 700 0.95rem/1 "Space Grotesk", sans-serif;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 100ms ease, transform 100ms ease;
+}
+
+.mine-cell:hover:not(.is-open) {
+    background: #d4d4d4;
+}
+
+.mine-cell:active:not(.is-open) {
+    border-color: #808080 #fff #fff #808080;
+}
+
+.mine-cell.is-open {
+    border: 1px solid #888;
+    background: #c0c0c0;
+    cursor: default;
+}
+
+.mine-cell[data-number="1"] { color: #4f4f4f; }
+.mine-cell[data-number="2"] { color: #686868; }
+.mine-cell[data-number="3"] { color: #111; }
+.mine-cell[data-number="4"] { color: #444; }
+.mine-cell[data-number="5"] { color: #777; }
+.mine-cell[data-number="6"] { color: #555; }
+.mine-cell[data-number="7"] { color: #222; }
+.mine-cell[data-number="8"] { color: #888; }
+
+.mine-cell.is-flagged {
+    color: #222;
+    font-size: 1.05rem;
+}
+
+.mine-cell.is-mine {
+    background: #555;
+    color: #fff;
+}
+
+.mine-cell.is-wrong-flag {
+    background: #aaa;
+    color: #111;
+}
+
+.mine-board.is-finished .mine-cell:not(.is-open) {
+    cursor: default;
+}
+
+.game-message {
+    min-height: 1.5rem;
+    margin: 0.65rem 0 0;
+    color: #222;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.game-hint {
+    margin: 0.35rem 0 0;
+    font-size: 0.6rem;
+    text-align: center;
+    text-transform: none;
+}
+
+
+/* MUSIC PLAYER */
+
+.music-player {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    padding: 1.1rem;
+    border: 2px solid;
+    border-color: #fff #707070 #707070 #fff;
+    background: #c0c0c0;
+    color: #111;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+}
+
+.music-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.7rem;
+    margin-bottom: 0.8rem;
+}
+
+.game-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.game-level {
+    color: #444;
+    font-family: "DM Mono", monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+}
+
+.music-video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 2px inset #eee;
+    background: #111;
+}
+
+.music-video-container iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.music-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-top: 0.8rem;
+    color: #444;
+    font: 500 0.65rem "DM Mono", monospace;
+    letter-spacing: 0.04em;
+}
+
+.music-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #398b55;
+    box-shadow: 0 0 8px rgba(57, 139, 85, 0.6);
+}
+
+.music-equalizer {
+    margin-left: auto;
+    font-size: 1.2rem;
+}
+
+.favorite-shuffle {
+    display: grid;
+    flex: 0 0 auto;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--ink);
+    font-size: 22px;
+    cursor: pointer;
+    transition:
+        transform 180ms ease,
+        background-color 180ms ease,
+        border-color 180ms ease;
+}
+
+.favorite-shuffle:hover {
+    transform: translateX(4px);
+    background: var(--surface);
+    border-color: var(--ink);
+}
+
+.favorite-shuffle:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================================================
+   6. SECTION LAYOUTS
+   ========================================================= */
+
+.space-dump,
+.resume-section,
+.portfolio-section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--line);
+}
+
+.section-heading {
+    margin-bottom: 2.5rem;
+}
+
+.heading-row {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+h2 {
+    margin: 0;
+    font-size: 3.15rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.08;
+}
+
+
+/* =========================================================
+   7. SPACE PHOTO GRID
+   ========================================================= */
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    overflow: visible;
+}
+
+.photo-card {
+    min-width: 0;
+    overflow: visible;
+}
+
+.photo-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    background: var(--surface);
+}
+
+.photo-card figcaption {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.8rem;
+    padding-top: 0.85rem;
+}
+
+.photo-card figcaption span {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.photo-card figcaption strong {
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.photo-card figcaption small {
+    color: var(--muted);
+    font-family: "DM Mono", monospace;
+    font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   8. PORTFOLIO & PROJECTS
+   ========================================================= */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.project-item {
+    min-height: 10rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--line);
+}
+
+.project-number {
+    color: var(--muted);
+    font: 400 0.72rem "DM Mono", monospace;
+}
+
+.project-item h3 {
+    margin: 1rem 0 0.35rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.project-item h3 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 160ms ease;
+}
+
+.project-item h3 a:hover {
+    color: var(--muted);
+}
+
+.project-item p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.spreadsheet-project {
+    grid-column: 1 / -1;
+}
+
+.spreadsheet-heading {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.stock-pdf-viewer {
+    margin-top: 1.25rem;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--surface);
+}
+
+.stock-pdf-toolbar {
+    display: flex;
+    min-height: 3rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.65rem 0.9rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.stock-pdf-name {
+    color: var(--muted);
+    font: 0.75rem "DM Mono", monospace;
+}
+
+.stock-pdf-toolbar a {
+    color: var(--ink);
+    font-size: 0.78rem;
+    transition: color 160ms ease;
+}
+
+.stock-pdf-toolbar a:hover {
+    color: var(--muted);
+}
+
+.stock-pdf-toolbar a span {
+    color: var(--acid);
+}
+
+.stock-pdf-frame {
+    display: block;
+    width: 100%;
+    height: 440px;
+    min-height: 0;
+    border: 0;
+    background: #fff;
+}
+
+/* CConverter screenshot */
+
+.project-preview {
+    width: 100%;
+    margin-top: 1.25rem;
+    overflow: visible;
+    background: transparent;
+}
+
+.project-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: top;
+    border: 1px solid var(--line);
+    background: var(--surface);
+}
+
+
+/* =========================================================
+   9. IMAGE HOVER / 3D TILT
+   ========================================================= */
+
+/* Only images selected by the JavaScript receive this class.
+   The resume image is not included. */
+
+.image-tilt {
+    position: relative;
+    transform: perspective(800px)
+        rotateX(var(--tilt-y, 0deg))
+        rotateY(var(--tilt-x, 0deg))
+        scale(1);
+    transform-style: preserve-3d;
+    transition:
+        transform 180ms cubic-bezier(0.2, 0.7, 0.2, 1),
+        box-shadow 180ms ease;
+}
+
+.image-tilt.is-hovered {
+    z-index: 10;
+    transform: perspective(800px)
+        rotateX(var(--tilt-y, 0deg))
+        rotateY(var(--tilt-x, 0deg))
+        scale(1.15);
+    box-shadow:
+        0 22px 45px rgba(0, 0, 0, 0.28),
+        0 0 28px rgba(160, 160, 160, 0.25);
+    transition:
+        transform 50ms linear,
+        box-shadow 180ms ease;
+}
+
+
+/* =========================================================
+   10. RESUME VIEWER
+   ========================================================= */
+
+.resume-frame {
+    position: relative;
+}
+
+.viewer {
+    height: var(--resume-height);
+    overflow: auto;
+    overscroll-behavior: contain;
+    border: 1px solid var(--line);
+    background: #fff;
+}
+
+.viewer:focus-visible {
+    outline: 2px solid var(--acid);
+    outline-offset: 3px;
+}
+
+.viewer img {
+    display: block;
+    width: 75%;
+    max-width: none;
+    height: auto;
+    margin-inline: auto;
+}
+
+.viewer-controls {
+    position: sticky;
+    z-index: 2;
+    top: 0.7rem;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.35rem;
+    margin: 0.7rem 0.7rem -2.7rem auto;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 160ms ease, visibility 160ms ease;
+}
+
+.viewer:hover .viewer-controls,
+.viewer:focus-within .viewer-controls {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.viewer-controls button {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(245, 245, 245, 0.96);
+    color: #171717;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+    transition: transform 160ms ease, color 160ms ease;
+}
+
+.viewer-controls button:hover {
+    color: #555;
+    transform: translateY(-2px);
+}
+
+.viewer-controls svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 1.7;
+}
+
+.viewer-controls .fit-button {
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 0.35rem 0.5rem;
+    border-radius: 2px;
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   11. FOOTER
+   ========================================================= */
+
+.site-footer {
+    display: flex;
+    min-height: 5rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    text-transform: uppercase;
+}
+
+.site-footer a {
+    color: var(--acid);
+    transition: color 160ms ease;
+}
+
+.site-footer a:hover {
+    color: var(--ink);
+}
+
+
+/* =========================================================
+   12. SCROLL REVEAL ANIMATIONS
+   ========================================================= */
+
+.reveal {
+    transition:
+        opacity 650ms ease,
+        transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.reveal-ready .reveal:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(1.2rem);
+}
+
+.reveal-ready .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0ms;
+}
+
+
+/* =========================================================
+   13. RESPONSIVE DESIGN: TABLETS
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .site-header,
+    main,
+    .site-footer {
+        width: min(var(--page-width), calc(100% - 3rem));
+    }
+
+    .hero {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    h1 {
+        font-size: 4.8rem;
+    }
+
+    .hero-game {
+        --cell-size: clamp(25px, 3.2vw, 32px);
+    }
+}
+
+
+/* =========================================================
+   14. RESPONSIVE DESIGN: MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+    .site-header,
+    main,
+    .site-footer {
+        width: calc(100% - 2rem);
+    }
+
+    .site-header {
+        min-height: 4.5rem;
+    }
+
+    .site-header nav {
+        gap: 0.85rem;
+    }
+
+    .site-header nav a {
+        font-size: 0.64rem;
+    }
+
+    .header-note {
+        display: none;
+    }
+
+    .theme-toggle {
+        font-size: 0.65rem;
+    }
+
+    .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 4rem 0 4.5rem;
+    }
+
+    h1 {
+        font-size: 4.1rem;
+    }
+
+    .hero-lede {
+        font-size: 1.2rem;
+    }
+
+    .favorite-section-heading {
+        margin-bottom: 0.8rem;
+    }
+
+    .favorite-section-heading h2 {
+        font-size: 1.35rem;
+    }
+
+    .hero-game {
+        --cell-size: clamp(25px, 7vw, 30px);
+        padding: 0.7rem;
+    }
+
+    .music-player {
+        padding: 0.7rem;
+    }
+
+    .game-wrapper {
+        gap: 10px;
+    }
+
+    .favorite-shuffle {
+        width: 36px;
+        height: 36px;
+    }
+
+    .game-level {
+        font-size: 0.55rem;
+    }
+
+    .hero-index {
+        bottom: 1.1rem;
+    }
+
+    .space-dump,
+    .resume-section,
+    .portfolio-section {
+        padding: 3.5rem 0;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .spreadsheet-heading {
+        flex-direction: column;
+    }
+
+    .heading-row {
+        display: block;
+    }
+
+    .heading-row > p {
+        margin-top: 0.8rem;
+    }
+
+    h2 {
+        font-size: 2.45rem;
+    }
+
+    /* Space photos */
+
+    .photo-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.8rem 0.8rem;
+    }
+
+    .photo-card {
+        grid-column: span 1;
+    }
+
+    .photo-card img {
+        width: 100%;
+        aspect-ratio: 0.9;
+        object-fit: cover;
+    }
+
+    .photo-card figcaption {
+        display: block;
+    }
+
+    .photo-card figcaption strong {
+        font-size: 0.9rem;
+    }
+
+    .photo-card figcaption small {
+        display: block;
+        margin-top: 0.2rem;
+        font-size: 0.7rem;
+        text-align: left;
+    }
+
+    .viewer {
+        height: 50vh;
+    }
+
+    .viewer img {
+        width: 88%;
+    }
+
+    .stock-pdf-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.35rem;
+    }
+
+    .stock-pdf-frame {
+        height: 340px;
+        min-height: 0;
+    }
+
+    .site-footer {
+        min-height: 5rem;
+        flex-wrap: wrap;
+        padding: 1rem 0;
+        font-size: 0.62rem;
+    }
+
+    .site-footer > span:nth-child(2) {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   15. ACCESSIBILITY: REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html,
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal-ready .reveal:not(.is-visible) {
+        opacity: 1;
+        transform: none;
+    }
+
+    .image-tilt,
+    .image-tilt.is-hovered {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+
+/* =========================================================
+   16. FULL-SCREEN CIRCULAR THEME TRANSITION
+   ========================================================= */
+
+::view-transition-group(root) {
+    animation: none;
+}
+
+::view-transition-image-pair(root) {
+    isolation: isolate;
+}
+
+::view-transition-old(root) {
+    animation: none;
+    opacity: 1;
+}
+
+::view-transition-new(root) {
+    animation: theme-circle-reveal 1400ms cubic-bezier(0.65, 0, 0.35, 1) both;
+    opacity: 1;
+    z-index: 9999;
+}
+
+@keyframes theme-circle-reveal {
+    from {
+        clip-path: circle(0px at var(--theme-x) var(--theme-y));
+    }
+
+    to {
+        clip-path: circle(150vmax at var(--theme-x) var(--theme-y));
+    }
+}
