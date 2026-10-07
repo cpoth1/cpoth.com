@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,25 +64,63 @@
                 and photography.
             </p>
 
-            <div class="links">
+            <div class="links" aria-label="Social and contact links">
+
+                <!-- EMAIL -->
                 <span class="email-action">
-                    <button class="email-button" type="button" data-email="cpothier4@gmail.com">
-                        Email <span aria-hidden="true">↗</span>
+                    <button
+                        class="icon-link email-button"
+                        type="button"
+                        data-email="cpothier4@gmail.com"
+                        aria-label="Copy email address"
+                        title="Copy email address"
+                    >
+                        <img src="gmail.svg" alt="" aria-hidden="true">
                     </button>
-                    <span class="copy-feedback" role="status" aria-live="polite"></span>
+
+                    <span
+                        class="copy-feedback"
+                        role="status"
+                        aria-live="polite"
+                    ></span>
                 </span>
 
-                <a href="https://linkedin.com/in/christianpoth" target="_blank" rel="noopener noreferrer">
-                    LinkedIn<span aria-hidden="true">↗</span>
+                <!-- LINKEDIN -->
+                <a
+                    class="icon-link"
+                    href="https://linkedin.com/in/christianpoth"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    title="LinkedIn"
+                >
+                    <img src="linkedin.webp" alt="" aria-hidden="true">
                 </a>
 
-                <a href="https://www.wallstreetoasis.com/user/1488968" target="_blank" rel="noopener noreferrer">
-                    WSO<span aria-hidden="true">↗</span>
+                <!-- WALL STREET OASIS -->
+                <a
+                    class="icon-link wso-icon"
+                    href="https://www.wallstreetoasis.com/user/1488968"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Wall Street Oasis"
+                    title="Wall Street Oasis"
+                >
+                    <img src="wso.png" alt="" aria-hidden="true">
                 </a>
 
-                <a href="https://www.instagram.com/cpoth_" target="_blank" rel="noopener noreferrer">
-                    Instagram<span aria-hidden="true">↗</span>
+                <!-- INSTAGRAM -->
+                <a
+                    class="icon-link"
+                    href="https://www.instagram.com/cpoth_"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    title="Instagram"
+                >
+                    <img src="insta.webp" alt="" aria-hidden="true">
                 </a>
+
             </div>
         </div>
 
@@ -105,7 +142,7 @@
                             <div class="hero-game" aria-label="Playable Minesweeper game">
 
                                 <div class="minesweeper-heading">
-                                    <h3>Minesweeper — Favorite Game</h3>
+                                    <h3>Minesweeper — Favorite Game <br> (Try to beat my time of 2 seconds!) </h3>
                                 </div>
 
                                 <div class="game-status-bar">
@@ -114,7 +151,13 @@
                                         <output id="mine-count">010</output>
                                     </div>
 
-                                    <button class="game-reset" type="button" data-new-game aria-label="Start a new game" title="New game">☺</button>
+                                    <button
+                                        class="game-reset"
+                                        type="button"
+                                        data-new-game
+                                        aria-label="Start a new game"
+                                        title="New game"
+                                    >☺</button>
 
                                     <div class="game-counter game-clock">
                                         <span>TIME</span>
@@ -127,9 +170,20 @@
                                     <button type="button" data-mode="flag" aria-pressed="false">Flag</button>
                                 </div>
 
-                                <div class="mine-board" id="mine-board" role="grid" aria-label="Minesweeper Classic beginner board" aria-describedby="game-message"></div>
+                                <div
+                                    class="mine-board"
+                                    id="mine-board"
+                                    role="grid"
+                                    aria-label="Minesweeper Classic beginner board"
+                                    aria-describedby="game-message"
+                                ></div>
 
-                                <p class="game-message" id="game-message" role="status" aria-live="polite">
+                                <p
+                                    class="game-message"
+                                    id="game-message"
+                                    role="status"
+                                    aria-live="polite"
+                                >
                                     Pick a square to start.
                                 </p>
 
@@ -156,8 +210,8 @@
                                         title="Favorite song"
                                         allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
                                         referrerpolicy="strict-origin-when-cross-origin"
-                                        allowfullscreen>
-                                    </iframe>
+                                        allowfullscreen
+                                    ></iframe>
                                 </div>
 
                                 <div class="music-footer">
@@ -192,13 +246,19 @@
 
 
     <!-- PORTFOLIO -->
-    <section class="portfolio-section" id="portfolio" aria-labelledby="portfolio-title">
+    <section
+        class="portfolio-section"
+        id="portfolio"
+        aria-labelledby="portfolio-title"
+    >
 
         <div class="section-heading reveal">
             <p class="eyebrow"><span>02</span> PROJECTS</p>
 
             <div class="heading-row">
-                <h2 id="portfolio-title">What i've been working on<span class="heading-period">.</span></h2>
+                <h2 id="portfolio-title">
+                    What i've been working on<span class="heading-period">.</span>
+                </h2>
                 <p>Research, analysis, and projects.</p>
             </div>
         </div>
@@ -213,7 +273,7 @@
                         <p>
                             An Excel-based stock screener for organizing
                             and comparing publicly traded companies
-                            using financial metrics. - Tracked using live data from LSEG Data & Analytics.
+                            using financial metrics. - Tracked using live data from LSEG Data &amp; Analytics.
                         </p>
                     </div>
                 </div>
@@ -221,7 +281,11 @@
                 <div class="stock-pdf-viewer">
                     <div class="stock-pdf-toolbar">
                         <span class="stock-pdf-name">stockimage.pdf</span>
-                        <a href="stockimage.pdf" target="_blank" rel="noopener noreferrer">
+                        <a
+                            href="stockimage.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             Open PDF in new tab <span aria-hidden="true">↗</span>
                         </a>
                     </div>
@@ -237,11 +301,17 @@
 
             <article class="project-item reveal">
                 <span class="project-number">02</span>
+
                 <h3>
-                    <a href="https://cpoth1.github.io/CConverter/" target="_blank" rel="noopener noreferrer">
+                    <a
+                        href="https://cpoth1.github.io/CConverter/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         CConverter↗
                     </a>
                 </h3>
+
                 <p>
                     A simple currency converter featuring live exchange rates,
                     with a dedicated section for the latest currency and foreign exchange news.
@@ -259,7 +329,9 @@
 
             <article class="project-item reveal">
                 <span class="project-number">03</span>
+
                 <h3>Visa Joint Equity Research Project</h3>
+
                 <p>
                     A collaborative equity research project with students from Bowdoin and UConn, building a comprehensive investment thesis on Visa through financial modeling, valuation, industry analysis, and an investment pitch.
                     - Work in progress.
@@ -271,36 +343,67 @@
 
 
     <!-- RESUME -->
-    <section class="resume-section" id="resume" aria-labelledby="resume-title">
+    <section
+        class="resume-section"
+        id="resume"
+        aria-labelledby="resume-title"
+    >
 
         <div class="section-heading reveal">
             <p class="eyebrow"><span>03</span> EXPERIENCE</p>
 
             <div class="heading-row">
-                <h2 id="resume-title">Resume &amp; experience<span class="heading-period">.</span></h2>
-                <p>Education, professional experience, activities, and skills.</p>
+                <h2 id="resume-title">
+                    Resume &amp; experience<span class="heading-period">.</span>
+                </h2>
+
+                <p>
+                    Education, professional experience, activities, and skills.
+                </p>
             </div>
         </div>
 
         <div class="resume-frame reveal">
-            <div class="viewer" tabindex="0" role="region" aria-label="Resume, scrollable">
+            <div
+                class="viewer"
+                tabindex="0"
+                role="region"
+                aria-label="Resume, scrollable"
+            >
 
-                <div class="viewer-controls" aria-label="Resume zoom controls">
-                    <button type="button" data-zoom="in" aria-label="Zoom in" title="Zoom in">
+                <div
+                    class="viewer-controls"
+                    aria-label="Resume zoom controls"
+                >
+                    <button
+                        type="button"
+                        data-zoom="in"
+                        aria-label="Zoom in"
+                        title="Zoom in"
+                    >
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                             <circle cx="10.5" cy="10.5" r="6.5"></circle>
                             <path d="m15.5 15.5 5 5M10.5 7.5v6M7.5 10.5h6"></path>
                         </svg>
                     </button>
 
-                    <button type="button" data-zoom="out" aria-label="Zoom out" title="Zoom out">
+                    <button
+                        type="button"
+                        data-zoom="out"
+                        aria-label="Zoom out"
+                        title="Zoom out"
+                    >
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                             <circle cx="10.5" cy="10.5" r="6.5"></circle>
                             <path d="m15.5 15.5 5 5M7.5 10.5h6"></path>
                         </svg>
                     </button>
 
-                    <button class="fit-button" type="button" data-zoom="fit">Fit</button>
+                    <button
+                        class="fit-button"
+                        type="button"
+                        data-zoom="fit"
+                    >Fit</button>
                 </div>
 
                 <img
@@ -314,41 +417,80 @@
 
 
     <!-- PERSONAL INTERESTS -->
-    <section class="space-dump" id="space" aria-labelledby="space-title">
+    <section
+        class="space-dump"
+        id="space"
+        aria-labelledby="space-title"
+    >
 
         <div class="section-heading reveal">
-            <p class="eyebrow"><span>04</span> PERSONAL INTERESTS</p>
+            <p class="eyebrow">
+                <span>04</span> PERSONAL INTERESTS
+            </p>
 
             <div class="heading-row">
-                <h2 id="space-title">Astrophotgraphy<span class="heading-period">.</span></h2>
+                <h2 id="space-title">
+                    Astrophotgraphy<span class="heading-period">.</span>
+                </h2>
+
                 <p>Heritage 130 - Shot with iPhone.</p>
             </div>
         </div>
 
         <div class="photo-grid">
-    <figure class="photo-card reveal">
-        <img src="moon.png" alt="Moon" loading="lazy" decoding="async">
-        <figcaption>
-            <span><strong>Moon</strong><small>July 28th 12:10am - 144x zoom - 4.5mm</small></span>
-        </figcaption>
-    </figure>
 
-    <figure class="photo-card reveal">
-        <img src="saturn.png" alt="Saturn" loading="lazy" decoding="async">
-        <figcaption>
-            <span><strong>Saturn</strong><small>August 7th 3:12am - 144x zoom - 4.5mm</small></span>
-        </figcaption>
-    </figure>
+            <figure class="photo-card reveal">
+                <img
+                    src="moon.png"
+                    alt="Moon"
+                    loading="lazy"
+                    decoding="async"
+                >
 
-    <figure class="photo-card reveal">
-        <img src="venus.png" alt="Venus" loading="lazy" decoding="async">
-        <figcaption>
-            <span><strong>Venus</strong><small>August 6th 8:56pm - 144x zoom - 4.5mm</small></span>
-        </figcaption>
-    </figure>
-</div>
+                <figcaption>
+                    <span>
+                        <strong>Moon</strong>
+                        <small>July 28th 12:10am - 144x zoom - 4.5mm</small>
+                    </span>
+                </figcaption>
+            </figure>
+
+            <figure class="photo-card reveal">
+                <img
+                    src="saturn.png"
+                    alt="Saturn"
+                    loading="lazy"
+                    decoding="async"
+                >
+
+                <figcaption>
+                    <span>
+                        <strong>Saturn</strong>
+                        <small>August 7th 3:12am - 144x zoom - 4.5mm</small>
+                    </span>
+                </figcaption>
+            </figure>
+
+            <figure class="photo-card reveal">
+                <img
+                    src="venus.png"
+                    alt="Venus"
+                    loading="lazy"
+                    decoding="async"
+                >
+
+                <figcaption>
+                    <span>
+                        <strong>Venus</strong>
+                        <small>August 6th 8:56pm - 144x zoom - 4.5mm</small>
+                    </span>
+                </figcaption>
+            </figure>
+
+        </div>
 
         <p class="archive-note">Stacked in AutoStakkert! Not raw.</p>
+
     </section>
 
 </main>
@@ -375,7 +517,10 @@
         document.documentElement.dataset.theme = theme;
 
         if (themeToggle) {
-            themeToggle.setAttribute("aria-checked", String(theme === "dark"));
+            themeToggle.setAttribute(
+                "aria-checked",
+                String(theme === "dark")
+            );
         }
 
         if (save) {
@@ -392,14 +537,21 @@
         let savedTheme = "light";
 
         try {
-            savedTheme = localStorage.getItem("site-theme") === "dark" ? "dark" : "light";
+            savedTheme =
+                localStorage.getItem("site-theme") === "dark"
+                    ? "dark"
+                    : "light";
         } catch (error) {}
 
         requestedTheme = savedTheme;
         setTheme(savedTheme);
 
         themeToggle?.addEventListener("click", () => {
-            requestedTheme = requestedTheme === "dark" ? "light" : "dark";
+            requestedTheme =
+                requestedTheme === "dark"
+                    ? "light"
+                    : "dark";
+
             const nextTheme = requestedTheme;
 
             if (activeThemeTransition) {
@@ -409,12 +561,24 @@
 
             const rect = themeToggle.getBoundingClientRect();
 
-            document.documentElement.style.setProperty("--theme-x", `${rect.left + rect.width / 2}px`);
-            document.documentElement.style.setProperty("--theme-y", `${rect.top + rect.height / 2}px`);
+            document.documentElement.style.setProperty(
+                "--theme-x",
+                `${rect.left + rect.width / 2}px`
+            );
 
-            const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            document.documentElement.style.setProperty(
+                "--theme-y",
+                `${rect.top + rect.height / 2}px`
+            );
 
-            if (document.startViewTransition && !reducedMotion) {
+            const reducedMotion = window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+            if (
+                document.startViewTransition &&
+                !reducedMotion
+            ) {
                 const transition = document.startViewTransition(() => {
                     setTheme(nextTheme, true);
                 });
@@ -423,10 +587,18 @@
 
                 transition.finished.then(
                     () => {
-                        if (activeThemeTransition === transition) activeThemeTransition = null;
+                        if (
+                            activeThemeTransition === transition
+                        ) {
+                            activeThemeTransition = null;
+                        }
                     },
                     () => {
-                        if (activeThemeTransition === transition) activeThemeTransition = null;
+                        if (
+                            activeThemeTransition === transition
+                        ) {
+                            activeThemeTransition = null;
+                        }
                     }
                 );
             } else {
@@ -445,11 +617,20 @@
 
         if (!viewer || !resume) return;
 
-        const fitZoom = window.matchMedia("(max-width: 640px)").matches ? 88 : 75;
+        const fitZoom = window.matchMedia(
+            "(max-width: 640px)"
+        ).matches
+            ? 88
+            : 75;
+
         let zoom = fitZoom;
 
         function setZoom(value) {
-            zoom = Math.min(300, Math.max(50, value));
+            zoom = Math.min(
+                300,
+                Math.max(50, value)
+            );
+
             resume.style.width = `${zoom}%`;
         }
 
@@ -459,9 +640,11 @@
                     case "in":
                         setZoom(zoom + 25);
                         break;
+
                     case "out":
                         setZoom(zoom - 25);
                         break;
+
                     case "fit":
                         setZoom(fitZoom);
                         break;
@@ -476,17 +659,38 @@
     /* 3. MINESWEEPER */
 
     function initializeMinesweeper() {
-        const boardElement = document.getElementById("mine-board");
-        const mineCount = document.getElementById("mine-count");
-        const gameTimer = document.getElementById("game-timer");
-        const gameMessage = document.getElementById("game-message");
-        const newGameButton = document.querySelector("[data-new-game]");
-        const modeButtons = document.querySelectorAll("[data-mode]");
+        const boardElement =
+            document.getElementById("mine-board");
 
-        if (!window.minesweeper || !minesweeper.Board || !minesweeper.generateMineArray) {
-            gameMessage.textContent = "Minesweeper could not load. Please refresh the page.";
+        const mineCount =
+            document.getElementById("mine-count");
+
+        const gameTimer =
+            document.getElementById("game-timer");
+
+        const gameMessage =
+            document.getElementById("game-message");
+
+        const newGameButton =
+            document.querySelector("[data-new-game]");
+
+        const modeButtons =
+            document.querySelectorAll("[data-mode]");
+
+        if (
+            !window.minesweeper ||
+            !minesweeper.Board ||
+            !minesweeper.generateMineArray
+        ) {
+            gameMessage.textContent =
+                "Minesweeper could not load. Please refresh the page.";
+
             newGameButton.disabled = true;
-            modeButtons.forEach(button => button.disabled = true);
+
+            modeButtons.forEach(
+                button => button.disabled = true
+            );
+
             return;
         }
 
@@ -504,22 +708,34 @@
 
         function isGameFinished() {
             const state = gameBoard.state();
-            return state === minesweeper.BoardStateEnum.WON ||
-                   state === minesweeper.BoardStateEnum.LOST;
+
+            return (
+                state === minesweeper.BoardStateEnum.WON ||
+                state === minesweeper.BoardStateEnum.LOST
+            );
         }
 
         function updateTimerDisplay() {
-            const display = String(elapsedSeconds).padStart(3, "0");
+            const display =
+                String(elapsedSeconds).padStart(3, "0");
+
             gameTimer.value = display;
             gameTimer.textContent = display;
         }
 
         function startTimer() {
             if (timerId) return;
+
             timerStartedAt = performance.now();
 
             timerId = setInterval(() => {
-                elapsedSeconds = Math.min(999, Math.floor((performance.now() - timerStartedAt) / 1000));
+                elapsedSeconds = Math.min(
+                    999,
+                    Math.floor(
+                        (performance.now() - timerStartedAt) / 1000
+                    )
+                );
+
                 updateTimerDisplay();
             }, 100);
         }
@@ -536,23 +752,40 @@
             cells = [];
 
             for (let row = 0; row < ROWS; row++) {
-                const rowElement = document.createElement("div");
+                const rowElement =
+                    document.createElement("div");
+
                 rowElement.className = "mine-row";
                 rowElement.setAttribute("role", "row");
+
                 cells[row] = [];
 
                 for (let col = 0; col < COLS; col++) {
-                    const button = document.createElement("button");
+                    const button =
+                        document.createElement("button");
+
                     button.type = "button";
                     button.className = "mine-cell";
                     button.setAttribute("role", "gridcell");
                     button.dataset.row = row;
                     button.dataset.col = col;
-                    button.tabIndex = row === 0 && col === 0 ? 0 : -1;
+                    button.tabIndex =
+                        row === 0 && col === 0 ? 0 : -1;
 
-                    button.addEventListener("click", handleCellClick);
-                    button.addEventListener("contextmenu", handleFlagClick);
-                    button.addEventListener("keydown", handleCellKeydown);
+                    button.addEventListener(
+                        "click",
+                        handleCellClick
+                    );
+
+                    button.addEventListener(
+                        "contextmenu",
+                        handleFlagClick
+                    );
+
+                    button.addEventListener(
+                        "keydown",
+                        handleCellKeydown
+                    );
 
                     cells[row][col] = button;
                     rowElement.appendChild(button);
@@ -562,41 +795,72 @@
             }
         }
 
-        function cellLabel(row, col, cell, isOpen, isMineShown) {
-            const name = `Row ${row + 1}, column ${col + 1}, `;
+        function cellLabel(
+            row,
+            col,
+            cell,
+            isOpen,
+            isMineShown
+        ) {
+            const name =
+                `Row ${row + 1}, column ${col + 1}, `;
 
-            if (cell.flag === minesweeper.CellFlagEnum.EXCLAMATION && !isMineShown) {
+            if (
+                cell.flag ===
+                    minesweeper.CellFlagEnum.EXCLAMATION &&
+                !isMineShown
+            ) {
                 return name + "flagged";
             }
 
-            if (!isOpen) return name + "covered";
-            if (cell.isMine) return name + "mine";
-            if (cell.numAdjacentMines === 0) return name + "empty";
+            if (!isOpen) {
+                return name + "covered";
+            }
 
-            return name + `${cell.numAdjacentMines} adjacent mines`;
+            if (cell.isMine) {
+                return name + "mine";
+            }
+
+            if (cell.numAdjacentMines === 0) {
+                return name + "empty";
+            }
+
+            return (
+                name +
+                `${cell.numAdjacentMines} adjacent mines`
+            );
         }
 
         function updateGame() {
             const grid = gameBoard.grid();
             let flags = 0;
 
-            const isLost = gameBoard.state() === minesweeper.BoardStateEnum.LOST;
+            const isLost =
+                gameBoard.state() ===
+                minesweeper.BoardStateEnum.LOST;
 
             for (let row = 0; row < ROWS; row++) {
                 for (let col = 0; col < COLS; col++) {
+
                     const current = grid[row][col];
                     const button = cells[row][col];
-                    const isMineShown = isLost && current.isMine;
+
+                    const isMineShown =
+                        isLost && current.isMine;
 
                     const isOpen =
-                        current.state === minesweeper.CellStateEnum.OPEN ||
+                        current.state ===
+                            minesweeper.CellStateEnum.OPEN ||
                         isMineShown;
 
                     button.className = "mine-cell";
                     button.textContent = "";
                     button.removeAttribute("data-number");
 
-                    if (current.flag === minesweeper.CellFlagEnum.EXCLAMATION) {
+                    if (
+                        current.flag ===
+                        minesweeper.CellFlagEnum.EXCLAMATION
+                    ) {
                         flags++;
                         button.classList.add("is-flagged");
                         button.textContent = "⚑";
@@ -608,15 +872,21 @@
                         if (current.isMine) {
                             button.classList.add("is-mine");
                             button.textContent = "✹";
-                        } else if (current.numAdjacentMines > 0) {
-                            button.dataset.number = current.numAdjacentMines;
-                            button.textContent = current.numAdjacentMines;
+                        } else if (
+                            current.numAdjacentMines > 0
+                        ) {
+                            button.dataset.number =
+                                current.numAdjacentMines;
+
+                            button.textContent =
+                                current.numAdjacentMines;
                         }
                     }
 
                     if (
                         isLost &&
-                        current.flag === minesweeper.CellFlagEnum.EXCLAMATION &&
+                        current.flag ===
+                            minesweeper.CellFlagEnum.EXCLAMATION &&
                         !current.isMine
                     ) {
                         button.classList.add("is-wrong-flag");
@@ -625,28 +895,54 @@
 
                     button.setAttribute(
                         "aria-label",
-                        cellLabel(row, col, current, isOpen, isMineShown)
+                        cellLabel(
+                            row,
+                            col,
+                            current,
+                            isOpen,
+                            isMineShown
+                        )
                     );
                 }
             }
 
-            const remaining = String(MINES - flags).padStart(3, "0");
+            const remaining =
+                String(MINES - flags).padStart(3, "0");
+
             mineCount.value = remaining;
             mineCount.textContent = remaining;
 
-            boardElement.classList.toggle("is-finished", isGameFinished());
+            boardElement.classList.toggle(
+                "is-finished",
+                isGameFinished()
+            );
         }
 
         function keepFirstRevealSafe(row, col) {
-            if (hasOpenedCell || !gameBoard.cell(col, row).isMine) return;
+            if (
+                hasOpenedCell ||
+                !gameBoard.cell(col, row).isMine
+            ) {
+                return;
+            }
 
             const savedFlags = [];
             const grid = gameBoard.grid();
 
             for (let flagRow = 0; flagRow < ROWS; flagRow++) {
-                for (let flagCol = 0; flagCol < COLS; flagCol++) {
-                    if (grid[flagRow][flagCol].flag === minesweeper.CellFlagEnum.EXCLAMATION) {
-                        savedFlags.push({ row: flagRow, col: flagCol });
+                for (
+                    let flagCol = 0;
+                    flagCol < COLS;
+                    flagCol++
+                ) {
+                    if (
+                        grid[flagRow][flagCol].flag ===
+                        minesweeper.CellFlagEnum.EXCLAMATION
+                    ) {
+                        savedFlags.push({
+                            row: flagRow,
+                            col: flagCol
+                        });
                     }
                 }
             }
@@ -654,19 +950,26 @@
             let attempts = 0;
 
             do {
-                gameBoard = new minesweeper.Board(
-                    minesweeper.generateMineArray({
-                        rows: ROWS,
-                        cols: COLS,
-                        mines: MINES
-                    })
-                );
+                gameBoard =
+                    new minesweeper.Board(
+                        minesweeper.generateMineArray({
+                            rows: ROWS,
+                            cols: COLS,
+                            mines: MINES
+                        })
+                    );
 
                 attempts++;
-            } while (gameBoard.cell(col, row).isMine && attempts < 100);
+            } while (
+                gameBoard.cell(col, row).isMine &&
+                attempts < 100
+            );
 
             savedFlags.forEach(position => {
-                gameBoard.cycleCellFlag(position.col, position.row);
+                gameBoard.cycleCellFlag(
+                    position.col,
+                    position.row
+                );
             });
         }
 
@@ -678,7 +981,11 @@
                 for (let col = 0; col < COLS; col++) {
                     const cell = grid[row][col];
 
-                    if (!cell.isMine && cell.state !== minesweeper.CellStateEnum.OPEN) {
+                    if (
+                        !cell.isMine &&
+                        cell.state !==
+                            minesweeper.CellStateEnum.OPEN
+                    ) {
                         allSafeOpen = false;
                     }
                 }
@@ -688,10 +995,18 @@
 
             for (let row = 0; row < ROWS; row++) {
                 for (let col = 0; col < COLS; col++) {
-                    const cell = gameBoard.cell(col, row);
+                    const cell =
+                        gameBoard.cell(col, row);
 
-                    if (cell.isMine && cell.flag !== minesweeper.CellFlagEnum.EXCLAMATION) {
-                        gameBoard.cycleCellFlag(col, row);
+                    if (
+                        cell.isMine &&
+                        cell.flag !==
+                            minesweeper.CellFlagEnum.EXCLAMATION
+                    ) {
+                        gameBoard.cycleCellFlag(
+                            col,
+                            row
+                        );
                     }
                 }
             }
@@ -702,23 +1017,40 @@
 
             stopTimer();
 
-            if (gameBoard.state() === minesweeper.BoardStateEnum.LOST) {
-                gameMessage.textContent = "Boom. Try another board.";
+            if (
+                gameBoard.state() ===
+                minesweeper.BoardStateEnum.LOST
+            ) {
+                gameMessage.textContent =
+                    "Boom. Try another board.";
             }
 
-            if (gameBoard.state() === minesweeper.BoardStateEnum.WON) {
-                gameMessage.textContent = "Board cleared. Nice work.";
+            if (
+                gameBoard.state() ===
+                minesweeper.BoardStateEnum.WON
+            ) {
+                gameMessage.textContent =
+                    "Board cleared. Nice work.";
             }
         }
 
         function toggleFlag(row, col) {
             if (isGameFinished()) return;
 
-            const cell = gameBoard.cell(col, row);
+            const cell =
+                gameBoard.cell(col, row);
 
-            if (cell.state === minesweeper.CellStateEnum.OPEN) return;
+            if (
+                cell.state ===
+                minesweeper.CellStateEnum.OPEN
+            ) {
+                return;
+            }
 
-            if (cell.flag === minesweeper.CellFlagEnum.EXCLAMATION) {
+            if (
+                cell.flag ===
+                minesweeper.CellFlagEnum.EXCLAMATION
+            ) {
                 gameBoard.cycleCellFlag(col, row);
                 gameBoard.cycleCellFlag(col, row);
             } else {
@@ -729,16 +1061,22 @@
 
             if (!hasOpenedCell) {
                 gameMessage.textContent =
-                    cell.flag === minesweeper.CellFlagEnum.EXCLAMATION
+                    cell.flag ===
+                    minesweeper.CellFlagEnum.EXCLAMATION
                         ? "Flag placed. Your first reveal will be safe."
                         : "Flag removed. Your first reveal will be safe.";
             }
         }
 
         function handleCellClick(event) {
-            const row = Number(event.currentTarget.dataset.row);
-            const col = Number(event.currentTarget.dataset.col);
-            const cell = gameBoard.cell(col, row);
+            const row =
+                Number(event.currentTarget.dataset.row);
+
+            const col =
+                Number(event.currentTarget.dataset.col);
+
+            const cell =
+                gameBoard.cell(col, row);
 
             if (isGameFinished()) return;
 
@@ -748,43 +1086,83 @@
             }
 
             if (
-                cell.state === minesweeper.CellStateEnum.OPEN &&
+                cell.state ===
+                    minesweeper.CellStateEnum.OPEN &&
                 cell.numAdjacentMines > 0
             ) {
                 const positions = [];
 
-                for (let neighborRow = Math.max(0, row - 1); neighborRow <= Math.min(ROWS - 1, row + 1); neighborRow++) {
-                    for (let neighborCol = Math.max(0, col - 1); neighborCol <= Math.min(COLS - 1, col + 1); neighborCol++) {
-                        if (neighborRow !== row || neighborCol !== col) {
-                            positions.push({ row: neighborRow, col: neighborCol });
+                for (
+                    let neighborRow =
+                        Math.max(0, row - 1);
+                    neighborRow <=
+                        Math.min(ROWS - 1, row + 1);
+                    neighborRow++
+                ) {
+                    for (
+                        let neighborCol =
+                            Math.max(0, col - 1);
+                        neighborCol <=
+                            Math.min(COLS - 1, col + 1);
+                        neighborCol++
+                    ) {
+                        if (
+                            neighborRow !== row ||
+                            neighborCol !== col
+                        ) {
+                            positions.push({
+                                row: neighborRow,
+                                col: neighborCol
+                            });
                         }
                     }
                 }
 
-                const flagged = positions.filter(position => {
-                    return gameBoard.cell(position.col, position.row).flag ===
-                           minesweeper.CellFlagEnum.EXCLAMATION;
-                }).length;
+                const flagged =
+                    positions.filter(position => {
+                        return (
+                            gameBoard.cell(
+                                position.col,
+                                position.row
+                            ).flag ===
+                            minesweeper.CellFlagEnum.EXCLAMATION
+                        );
+                    }).length;
 
-                if (flagged === cell.numAdjacentMines) {
+                if (
+                    flagged === cell.numAdjacentMines
+                ) {
                     positions.forEach(position => {
-                        const neighbor = gameBoard.cell(position.col, position.row);
+                        const neighbor =
+                            gameBoard.cell(
+                                position.col,
+                                position.row
+                            );
 
                         if (
-                            neighbor.state === minesweeper.CellStateEnum.CLOSED &&
-                            neighbor.flag === minesweeper.CellFlagEnum.NONE &&
+                            neighbor.state ===
+                                minesweeper.CellStateEnum.CLOSED &&
+                            neighbor.flag ===
+                                minesweeper.CellFlagEnum.NONE &&
                             !isGameFinished()
                         ) {
-                            gameBoard.openCell(position.col, position.row);
+                            gameBoard.openCell(
+                                position.col,
+                                position.row
+                            );
                         }
                     });
                 }
+
             } else if (
-                cell.state === minesweeper.CellStateEnum.CLOSED &&
-                cell.flag === minesweeper.CellFlagEnum.NONE
+                cell.state ===
+                    minesweeper.CellStateEnum.CLOSED &&
+                cell.flag ===
+                    minesweeper.CellFlagEnum.NONE
             ) {
                 keepFirstRevealSafe(row, col);
                 startTimer();
+
                 gameBoard.openCell(col, row);
                 hasOpenedCell = true;
 
@@ -801,6 +1179,7 @@
 
         function handleFlagClick(event) {
             event.preventDefault();
+
             toggleFlag(
                 Number(event.currentTarget.dataset.row),
                 Number(event.currentTarget.dataset.col)
@@ -808,24 +1187,49 @@
         }
 
         function handleCellKeydown(event) {
-            const row = Number(event.currentTarget.dataset.row);
-            const col = Number(event.currentTarget.dataset.col);
+            const row =
+                Number(event.currentTarget.dataset.row);
+
+            const col =
+                Number(event.currentTarget.dataset.col);
 
             let nextRow = row;
             let nextCol = col;
 
             switch (event.key) {
-                case "ArrowUp": nextRow--; break;
-                case "ArrowDown": nextRow++; break;
-                case "ArrowLeft": nextCol--; break;
-                case "ArrowRight": nextCol++; break;
-                default: return;
+                case "ArrowUp":
+                    nextRow--;
+                    break;
+
+                case "ArrowDown":
+                    nextRow++;
+                    break;
+
+                case "ArrowLeft":
+                    nextCol--;
+                    break;
+
+                case "ArrowRight":
+                    nextCol++;
+                    break;
+
+                default:
+                    return;
             }
 
             event.preventDefault();
 
-            nextRow = Math.max(0, Math.min(ROWS - 1, nextRow));
-            nextCol = Math.max(0, Math.min(COLS - 1, nextCol));
+            nextRow =
+                Math.max(
+                    0,
+                    Math.min(ROWS - 1, nextRow)
+                );
+
+            nextCol =
+                Math.max(
+                    0,
+                    Math.min(COLS - 1, nextCol)
+                );
 
             cells[row][col].tabIndex = -1;
             cells[nextRow][nextCol].tabIndex = 0;
@@ -837,7 +1241,10 @@
                 gameMode = button.dataset.mode;
 
                 modeButtons.forEach(modeButton => {
-                    modeButton.setAttribute("aria-pressed", String(modeButton === button));
+                    modeButton.setAttribute(
+                        "aria-pressed",
+                        String(modeButton === button)
+                    );
                 });
 
                 gameMessage.textContent =
@@ -856,25 +1263,37 @@
             gameMode = "reveal";
 
             updateTimerDisplay();
-            gameMessage.textContent = "Pick a square to start.";
+
+            gameMessage.textContent =
+                "Pick a square to start.";
 
             modeButtons.forEach(button => {
-                button.setAttribute("aria-pressed", String(button.dataset.mode === "reveal"));
+                button.setAttribute(
+                    "aria-pressed",
+                    String(
+                        button.dataset.mode === "reveal"
+                    )
+                );
             });
 
-            gameBoard = new minesweeper.Board(
-                minesweeper.generateMineArray({
-                    rows: ROWS,
-                    cols: COLS,
-                    mines: MINES
-                })
-            );
+            gameBoard =
+                new minesweeper.Board(
+                    minesweeper.generateMineArray({
+                        rows: ROWS,
+                        cols: COLS,
+                        mines: MINES
+                    })
+                );
 
             renderBoard();
             updateGame();
         }
 
-        newGameButton.addEventListener("click", startNewGame);
+        newGameButton.addEventListener(
+            "click",
+            startNewGame
+        );
+
         startNewGame();
     }
 
@@ -882,25 +1301,48 @@
     /* 4. MUSIC PLAYER FLIP */
 
     function initializeFavoriteShuffle() {
-        const wrapper = document.querySelector(".game-wrapper");
-        const shuffleButton = document.getElementById("favorite-shuffle");
-        const video = document.getElementById("favorite-video");
+        const wrapper =
+            document.querySelector(".game-wrapper");
 
-        if (!wrapper || !shuffleButton || !video) return;
+        const shuffleButton =
+            document.getElementById("favorite-shuffle");
+
+        const video =
+            document.getElementById("favorite-video");
+
+        if (!wrapper || !shuffleButton || !video) {
+            return;
+        }
 
         let musicOpen = false;
 
         function setMusicView(open) {
             musicOpen = open;
-            wrapper.classList.toggle("is-music", musicOpen);
 
-            shuffleButton.textContent = musicOpen ? "←" : "→";
+            wrapper.classList.toggle(
+                "is-music",
+                musicOpen
+            );
+
+            shuffleButton.textContent =
+                musicOpen ? "←" : "→";
+
             shuffleButton.setAttribute(
                 "aria-label",
-                musicOpen ? "Return to Minesweeper" : "Open music player"
+                musicOpen
+                    ? "Return to Minesweeper"
+                    : "Open music player"
             );
-            shuffleButton.setAttribute("aria-pressed", String(musicOpen));
-            shuffleButton.title = musicOpen ? "Return to Minesweeper" : "Open music player";
+
+            shuffleButton.setAttribute(
+                "aria-pressed",
+                String(musicOpen)
+            );
+
+            shuffleButton.title =
+                musicOpen
+                    ? "Return to Minesweeper"
+                    : "Open music player";
 
             if (musicOpen) {
                 video.src = video.dataset.src;
@@ -909,26 +1351,36 @@
             }
         }
 
-        shuffleButton.addEventListener("click", () => {
-            setMusicView(!musicOpen);
-        });
+        shuffleButton.addEventListener(
+            "click",
+            () => {
+                setMusicView(!musicOpen);
+            }
+        );
     }
 
 
     /* 5. EMAIL COPY */
 
     function initializeEmailCopy() {
-        const emailButton = document.querySelector(".email-button");
-        const feedback = document.querySelector(".copy-feedback");
+        const emailButton =
+            document.querySelector(".email-button");
 
-        if (!emailButton || !feedback) return;
+        const feedback =
+            document.querySelector(".copy-feedback");
+
+        if (!emailButton || !feedback) {
+            return;
+        }
 
         let feedbackTimer;
 
         function showCopied() {
             feedback.textContent = "Copied!";
             feedback.classList.remove("is-visible");
+
             void feedback.offsetWidth;
+
             feedback.classList.add("is-visible");
 
             clearTimeout(feedbackTimer);
@@ -939,7 +1391,9 @@
         }
 
         function fallbackCopy(text) {
-            const input = document.createElement("textarea");
+            const input =
+                document.createElement("textarea");
+
             input.value = text;
             input.setAttribute("readonly", "");
             input.style.position = "fixed";
@@ -952,30 +1406,43 @@
                 if (document.execCommand("copy")) {
                     showCopied();
                 } else {
-                    feedback.textContent = "Copy unavailable";
+                    feedback.textContent =
+                        "Copy unavailable";
                 }
             } catch (error) {
-                feedback.textContent = "Copy unavailable";
+                feedback.textContent =
+                    "Copy unavailable";
             } finally {
                 input.remove();
             }
         }
 
-        emailButton.addEventListener("click", async () => {
-            const email = emailButton.dataset.email;
-            if (!email) return;
+        emailButton.addEventListener(
+            "click",
+            async () => {
+                const email =
+                    emailButton.dataset.email;
 
-            if (navigator.clipboard && window.isSecureContext) {
-                try {
-                    await navigator.clipboard.writeText(email);
-                    showCopied();
-                } catch (error) {
+                if (!email) return;
+
+                if (
+                    navigator.clipboard &&
+                    window.isSecureContext
+                ) {
+                    try {
+                        await navigator.clipboard.writeText(
+                            email
+                        );
+
+                        showCopied();
+                    } catch (error) {
+                        fallbackCopy(email);
+                    }
+                } else {
                     fallbackCopy(email);
                 }
-            } else {
-                fallbackCopy(email);
             }
-        });
+        );
     }
 
 
@@ -985,19 +1452,24 @@
     */
 
     function initializeImageTilt() {
-        const images = document.querySelectorAll(
-            ".photo-card img, .project-preview img"
-        );
+        const images =
+            document.querySelectorAll(
+                ".photo-card img, .project-preview img"
+            );
 
-        const canHover = window.matchMedia(
-            "(hover: hover) and (pointer: fine)"
-        ).matches;
+        const canHover =
+            window.matchMedia(
+                "(hover: hover) and (pointer: fine)"
+            ).matches;
 
-        const reducedMotion = window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches;
+        const reducedMotion =
+            window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
 
-        if (!canHover || reducedMotion) return;
+        if (!canHover || reducedMotion) {
+            return;
+        }
 
         images.forEach(image => {
             let rect = null;
@@ -1007,43 +1479,83 @@
 
             image.classList.add("image-tilt");
 
-            image.addEventListener("pointerenter", () => {
-                rect = image.getBoundingClientRect();
-            });
+            image.addEventListener(
+                "pointerenter",
+                () => {
+                    rect =
+                        image.getBoundingClientRect();
+                }
+            );
 
-            image.addEventListener("pointermove", event => {
-                if (!rect) return;
+            image.addEventListener(
+                "pointermove",
+                event => {
+                    if (!rect) return;
 
-                pointerX = event.clientX;
-                pointerY = event.clientY;
+                    pointerX = event.clientX;
+                    pointerY = event.clientY;
 
-                if (frame) return;
+                    if (frame) return;
 
-                frame = requestAnimationFrame(() => {
-                    const x = (pointerX - rect.left) / rect.width;
-                    const y = (pointerY - rect.top) / rect.height;
+                    frame = requestAnimationFrame(() => {
+                        const x =
+                            (pointerX - rect.left) /
+                            rect.width;
 
-                    const rotateY = (x - 0.5) * 18;
-                    const rotateX = (0.5 - y) * 18;
+                        const y =
+                            (pointerY - rect.top) /
+                            rect.height;
 
-                    image.style.setProperty("--tilt-x", `${rotateY}deg`);
-                    image.style.setProperty("--tilt-y", `${rotateX}deg`);
+                        const rotateY =
+                            (x - 0.5) * 18;
 
-                    image.classList.add("is-hovered");
+                        const rotateX =
+                            (0.5 - y) * 18;
+
+                        image.style.setProperty(
+                            "--tilt-x",
+                            `${rotateY}deg`
+                        );
+
+                        image.style.setProperty(
+                            "--tilt-y",
+                            `${rotateX}deg`
+                        );
+
+                        image.classList.add(
+                            "is-hovered"
+                        );
+
+                        frame = 0;
+                    });
+                }
+            );
+
+            image.addEventListener(
+                "pointerleave",
+                () => {
+                    if (frame) {
+                        cancelAnimationFrame(frame);
+                    }
+
                     frame = 0;
-                });
-            });
+                    rect = null;
 
-            image.addEventListener("pointerleave", () => {
-                if (frame) cancelAnimationFrame(frame);
+                    image.classList.remove(
+                        "is-hovered"
+                    );
 
-                frame = 0;
-                rect = null;
+                    image.style.setProperty(
+                        "--tilt-x",
+                        "0deg"
+                    );
 
-                image.classList.remove("is-hovered");
-                image.style.setProperty("--tilt-x", "0deg");
-                image.style.setProperty("--tilt-y", "0deg");
-            });
+                    image.style.setProperty(
+                        "--tilt-y",
+                        "0deg"
+                    );
+                }
+            );
         });
     }
 
@@ -1051,33 +1563,52 @@
     /* 7. SCROLL REVEAL */
 
     function initializeReveal() {
-        const revealElements = document.querySelectorAll(".reveal");
+        const revealElements =
+            document.querySelectorAll(".reveal");
 
-        if (!revealElements.length) return;
-
-        if (
-            window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
-            !("IntersectionObserver" in window)
-        ) {
-            revealElements.forEach(element => element.classList.add("is-visible"));
+        if (!revealElements.length) {
             return;
         }
 
-        document.documentElement.classList.add("reveal-ready");
+        if (
+            window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches ||
+            !("IntersectionObserver" in window)
+        ) {
+            revealElements.forEach(
+                element =>
+                    element.classList.add("is-visible")
+            );
 
-        const observer = new IntersectionObserver(
-            (entries, observerInstance) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("is-visible");
-                        observerInstance.unobserve(entry.target);
-                    }
-                });
-            },
-            { threshold: 0.1 }
+            return;
+        }
+
+        document.documentElement.classList.add(
+            "reveal-ready"
         );
 
-        revealElements.forEach(element => observer.observe(element));
+        const observer =
+            new IntersectionObserver(
+                (entries, observerInstance) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add(
+                                "is-visible"
+                            );
+
+                            observerInstance.unobserve(
+                                entry.target
+                            );
+                        }
+                    });
+                },
+                { threshold: 0.1 }
+            );
+
+        revealElements.forEach(
+            element => observer.observe(element)
+        );
     }
 
 
